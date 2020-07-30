@@ -1,24 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+import Timer from './demo/Timer';
+import AccountList from './demo/AccountList';
+
 import './App.css';
+
+// This is fake account data.
+// It mimics data that might be loaded from e.g. a server or database.
+const fakeAccounts = [
+  {
+    id: 1,
+    name: 'One',
+    email: 'fake.email@example.com',
+    password: 'totally fake'
+  },
+  {
+    id: 2,
+    name: 'Two',
+    email: 'fake.email@example.com',
+    password: 'also fake'
+  },
+  {
+    id: 3,
+    name: 'Three',
+    email: 'also.fake.email@example.com',
+    password: 'definitely fake'
+  }
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Timer />
+      <AccountList accounts={fakeAccounts} />
     </div>
   );
 }
